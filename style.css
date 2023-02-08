@@ -1,0 +1,64 @@
+/* ---------- root variables ---------- */
+:root {
+  --green: rgb(38, 76, 89);
+  --green-opacity: rgba(38, 76, 89, 0.2);
+  --light-green: rgb(172, 198, 201);
+  --light-grey: #f1f1f4;
+  --dark-grey: #9898a1;
+  --text-color-light: #f1f1f1;
+  --text-color-dark: #333;
+  --white: #fff;
+  --font-family: "Tomorrow", Helvetica, Arial, sans-serif;
+  --text-color-out-of-stock: rgb(89, 38, 38);
+  --text-color-in-stock: rgb(172, 198, 201);
+}
+
+/* ---------- general styling ---------- */
+html {
+  color: var(--text-color-dark);
+  font-family: var(--font-family);
+  height: 100%;
+  width: 100%;
+}
+
+header {
+  text-align: center;
+  background: var(--light-grey);
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.section1 {
+  float: left;
+  width: 40%;
+}
+
+.section2 {
+  float: left;
+  width: 60%;
+}
+
+//fix img scaling
+//img {
+  max-width: 50%;
+}
+
+footer {
+  background: var(--dark-grey);
+  text-align: center;
+  padding: 1px;
+}
+
+main::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 600px) {
+  .section1,
+  .section2 {
+    width: 100%;
+    height: auto;
+  }
+}
