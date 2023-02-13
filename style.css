@@ -1,64 +1,68 @@
 /* ---------- root variables ---------- */
 :root {
-  --green: rgb(38, 76, 89);
-  --green-opacity: rgba(38, 76, 89, 0.2);
-  --light-green: rgb(172, 198, 201);
   --light-grey: #f1f1f4;
   --dark-grey: #9898a1;
   --text-color-light: #f1f1f1;
   --text-color-dark: #333;
-  --white: #fff;
-  --font-family: "Tomorrow", Helvetica, Arial, sans-serif;
   --text-color-out-of-stock: rgb(89, 38, 38);
   --text-color-in-stock: rgb(172, 198, 201);
 }
 
 /* ---------- general styling ---------- */
-html {
-  color: var(--text-color-dark);
-  font-family: var(--font-family);
-  height: 100%;
-  width: 100%;
+html * {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
   text-align: center;
-  background: var(--light-grey);
-  padding-top: 10px;
-  padding-bottom: 10px;
+  background: rgb(157, 41, 157);
+  color: white;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
+  border-radius: 0.5em;
 }
 
-.section1 {
-  float: left;
-  width: 40%;
+main {
+  display: grid;
+  grid-template-areas: "article1 aside" "article2 article3";
+  grid-auto-rows: 50vh 50vh;
+  grid-template-columns: 50% auto;
 }
 
-.section2 {
-  float: left;
-  width: 60%;
+#article1 {
+  grid-area: article1;
+  padding: 1em;
+  min-height: 30%;
 }
 
-//fix img scaling
-//img {
-  max-width: 50%;
+#article2 {
+  grid-area: article2;
+  padding: 1em;
+}
+
+#article3 {
+  grid-area: article3;
+  padding: 1em;
+}
+
+#picture > img {
+  grid-area: aside;
+  width: 100%;
+  object-fit: cover;
 }
 
 footer {
   background: var(--dark-grey);
   text-align: center;
-  padding: 1px;
+  padding: 0.1em;
+  border-radius: 0.5em;
 }
 
-main::after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-@media (max-width: 600px) {
-  .section1,
-  .section2 {
-    width: 100%;
-    height: auto;
+@media (max-width: 900px) {
+  main {
+    display: grid;
+    grid-template-areas: "aside" "article1" "article2" "article3";
+    grid-auto-rows: auto auto auto auto;
+    grid-template-columns: 1fr;
   }
 }
